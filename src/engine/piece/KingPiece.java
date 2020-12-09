@@ -12,7 +12,6 @@ public class KingPiece extends Piece {
     @Override
     public boolean canMove(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         return super.canMove(board, fromX, fromY, toX, toY) &&
-                ((Math.abs(fromX - toX) == 1 && Math.abs(fromY - toY) == 0) ||
-                        (Math.abs(fromX - toX) == 0 && Math.abs(fromY - toY) == 1));
+                ( Math.abs(fromX - toX) <= 1 && Math.abs(fromY - toY) <= 1);
     }
 }
