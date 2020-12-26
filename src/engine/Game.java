@@ -9,39 +9,33 @@ public class Game implements ChessController {
 
     private ChessView cv;
 
-    private ChessBoard board = new ChessBoard();
+    private ChessBoard board;
 
     private int rounds = 0;
     private boolean hasMoved = false;
 
-    public boolean playerHasMoved(){
+    public boolean playerHasMoved() {
         return this.hasMoved;
     }
 
-    public void nextRound(){
+    public void nextRound() {
         hasMoved = false;
         ++rounds;
         cv.displayMessage(getPlayerColor() == PlayerColor.WHITE ? "Aux Blancs" : "Aux Noirs");
+        if (board.checkmate(getPlayerColor())) {
+            cv.displayMessage(getPlayerColor() + " est en echec et mat");
+        }
     }
 
-    PlayerColor getPlayerColor(){
+    PlayerColor getPlayerColor() {
         return rounds % 2 == 0 ? PlayerColor.WHITE : PlayerColor.BLACK;
     }
 
     @Override
     public void start(ChessView view) {
-        System.out.println("Start!");
         cv = view;
         cv.startView();
-        cv.displayMessage("Aux blancs");
-        Piece[][] pieces = board.board();
-        for (int i = 0; i < 8; ++i) {
-            for (int j = 0; j < 8; ++j) {
-                if (pieces[i][j] != null) {
-                    cv.putPiece(pieces[i][j].type(), pieces[i][j].color(), j, i);
-                }
-            }
-        }
+        newGame();
     }
 
     @Override
@@ -49,17 +43,19 @@ public class Game implements ChessController {
         Piece piece = board.getPiece(fromX, fromY);
         if (piece == null) return false;
 
-        if(piece.color()!=getPlayerColor())return false;
+        if (piece.color() != getPlayerColor()) {
+            cv.displayMessage("Ce n'est pas votre tour!");
+            return false;
+        }
 
         System.out.println(piece.getClass().getSimpleName() + " " + fromX + " " + fromY + " " + toX + " " + toY);
-        if (piece.canMove(board, fromX, fromY, toX, toY)) {
-            if (board.movePiece(fromX, fromY, toX, toY)) {
-                cv.removePiece(fromX, fromY);
-                cv.putPiece(piece.type(), piece.color(), toX, toY);
-            }
+        if (board.movePiece(fromX, fromY, toX, toY)) {
+            cv.removePiece(fromX, fromY);
+            cv.putPiece(piece.type(), piece.color(), toX, toY);
             nextRound();
             return true;
         }
+        cv.displayMessage("Mouvement illégal!");
         return false;
     }
 
@@ -69,13 +65,14 @@ public class Game implements ChessController {
         Piece[][] pieces = board.board();
         rounds = 0;
         hasMoved = false;
-        for (int i = 0; i < 8; ++i) {
-            for (int j = 0; j < 8; ++j) {
-                if (pieces[i][j] != null) {
-                    cv.putPiece(pieces[i][j].type(), pieces[i][j].color(), j, i);
+        for (int x = 0; x < 8; ++x) {
+            for (int y = 0; y < 8; ++y) {
+                if (pieces[x][y] != null) {
+                    cv.putPiece(pieces[x][y].type(), pieces[x][y].color(), y, x);
                 }
             }
         }
-        System.out.println("New Game!");
+        cv.displayMessage("Aux Blancs");
     }
+
 }

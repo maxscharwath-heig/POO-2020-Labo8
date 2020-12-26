@@ -27,15 +27,15 @@ public class PawnPiece extends Piece {
         boolean isWhite = this.color() == PlayerColor.WHITE;
 
         //Le pion recule
-        if (!isWhite && dy < 0) return false;
-        if (isWhite && dy > 0) return false;
+        if (!isWhite && dy > 0) return false;
+        if (isWhite && dy < 0) return false;
 
         //Le pion a déjà bougé et bouge de 2 cases
-        if (!isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1)) return false;
-        if (isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
+        if (isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1)) return false;
+        if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
 
         //Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
-        int sens = !isWhite ? 1 : -1;
+        int sens = isWhite ? 1 : -1;
         if (dy == sens) {
             if (Math.abs(dx) == 1 && board.getPiece(toX, toY) == null) {
                 return false;

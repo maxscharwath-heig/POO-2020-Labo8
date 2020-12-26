@@ -11,6 +11,7 @@ public class QueenPiece extends Piece {
 
     }
 
+    //TODO BUG a cause de pente surement
     @Override
     public boolean canMove(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         if (!super.canMove(board, fromX, fromY, toX, toY)) return false;

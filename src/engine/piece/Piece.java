@@ -38,4 +38,9 @@ public abstract class Piece {
     public boolean hasMoved() {
         return hasMoved;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " + color;
+    }
 }
