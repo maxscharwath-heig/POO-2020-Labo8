@@ -2,10 +2,11 @@ package engine;
 
 import chess.ChessController;
 import chess.ChessView;
-import chess.PieceType;
 import chess.PlayerColor;
 import engine.choices.PromotePiece;
 import engine.piece.*;
+import engine.utils.Lol;
+import engine.utils.Position;
 
 public class Game implements ChessController {
 
@@ -16,10 +17,18 @@ public class Game implements ChessController {
     private int rounds = 0;
     private boolean hasMoved = false;
 
+    /**
+     * @return
+     */
     private boolean playerHasMoved() {
         return this.hasMoved;
     }
 
+    /**
+     * @param piece
+     * @param x
+     * @param y
+     */
     private void afterMove(Piece piece, int x, int y) {
         if (board.isPawnPromotable(x, y)) {
             PromotePiece promoted = cv.askUser("Promotion", "Quelle promotion voulez-vous ?",
@@ -28,23 +37,26 @@ public class Game implements ChessController {
                     new PromotePiece(new KnightPiece(piece.color())),
                     new PromotePiece(new BishopPiece(piece.color()))
             );
+            Lol.playSound("powerUp.wav");
             board.setPiece(x, y, promoted.getPiece());
-            cv.putPiece(promoted.getPiece().type(), promoted.getPiece().color(), x, y);
         }
     }
 
+    /**
+     *
+     */
     private void nextRound() {
         hasMoved = false;
         ++rounds;
 
-        if(board.isGameOver()){
-            cv.displayMessage("Le roi est mort, "+board.getWinner()+" est le gagnant!");
+        if (board.isGameOver()) {
+            cv.displayMessage("Le roi est mort, " + board.getWinner() + " est le gagnant!");
             return;
         }
 
         cv.displayMessage(getPlayerColor() == PlayerColor.WHITE ? "Aux Blancs" : "Aux Noirs");
         if (board.checkmate(getPlayerColor())) {
-            cv.displayMessage(getPlayerColor() + " est en echec et mat");
+            cv.displayMessage("Check!");
         }
     }
 
@@ -52,6 +64,18 @@ public class Game implements ChessController {
         return rounds % 2 == 0 ? PlayerColor.WHITE : PlayerColor.BLACK;
     }
 
+    private void updateGUI() {
+        for (Position pos : board.getUpdatedPositions()) {
+            Piece p = board.getPiece(pos.x, pos.y);
+            if (p == null) cv.removePiece(pos.x, pos.y);
+            else cv.putPiece(p.type(), p.color(), pos.x, pos.y);
+        }
+        board.clearUpdatedPositions();
+    }
+
+    /**
+     * @param view la vue à utiliser
+     */
     @Override
     public void start(ChessView view) {
         cv = view;
@@ -59,9 +83,16 @@ public class Game implements ChessController {
         newGame();
     }
 
+    /**
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return
+     */
     @Override
     public boolean move(int fromX, int fromY, int toX, int toY) {
-        if(board.isGameOver())return false;
+        if (board.isGameOver()) return false;
 
         Piece piece = board.getPiece(fromX, fromY);
         if (piece == null) return false;
@@ -71,18 +102,19 @@ public class Game implements ChessController {
             return false;
         }
 
-        System.out.println(piece.getClass().getSimpleName() + " " + fromX + " " + fromY + " " + toX + " " + toY);
         if (board.movePiece(fromX, fromY, toX, toY)) {
-            cv.removePiece(fromX, fromY);
-            cv.putPiece(piece.type(), piece.color(), toX, toY);
             afterMove(piece, toX, toY);
             nextRound();
+            updateGUI();
             return true;
         }
         cv.displayMessage("Mouvement illégal!");
         return false;
     }
 
+    /**
+     *
+     */
     @Override
     public void newGame() {
         board = new ChessBoard();
@@ -98,5 +130,4 @@ public class Game implements ChessController {
         }
         cv.displayMessage("Aux Blancs");
     }
-
 }

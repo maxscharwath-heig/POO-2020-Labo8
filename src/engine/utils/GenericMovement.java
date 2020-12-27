@@ -3,7 +3,16 @@ package engine.utils;
 import engine.ChessBoard;
 
 public class GenericMovement {
-    public static boolean crossMovement(ChessBoard board, int fromX, int fromY, int toX, int toY){
+    /**
+     *
+     * @param board
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return
+     */
+    public static boolean crossMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         if (fromX == toX) {//VERTICAL MOVE
             int delta = toY - fromY > 0 ? 1 : -1;
             for (int i = fromY + delta; i != toY; i += delta) {
@@ -18,7 +27,16 @@ public class GenericMovement {
         return true;
     }
 
-    public static boolean diagonalMovement(ChessBoard board, int fromX, int fromY, int toX, int toY){
+    /**
+     *
+     * @param board
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return
+     */
+    public static boolean diagonalMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         int dx = toX - fromX;
         int dy = toY - fromY;
         if (dx == 0 || dy == 0) return false;

@@ -35,10 +35,10 @@ public class PawnPiece extends Piece {
         if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
 
         //Le pion bouge de 2 cases mais un ennemi est sur le chemin
-        if (isWhite && dy == 2 && board.getPiece(fromX,fromY+1) != null) return false;
-        if (!isWhite && dy == -2 && board.getPiece(fromX,fromY-1) != null) return false;
-        if (isWhite && dy == 2 && board.getPiece(fromX,fromY+2) != null) return false;
-        if (!isWhite && dy == -2 && board.getPiece(fromX,fromY-2) != null) return false;
+        if (isWhite && dy == 2 && board.getPiece(fromX, fromY + 1) != null) return false;
+        if (!isWhite && dy == -2 && board.getPiece(fromX, fromY - 1) != null) return false;
+        if (isWhite && dy == 2 && board.getPiece(fromX, fromY + 2) != null) return false;
+        if (!isWhite && dy == -2 && board.getPiece(fromX, fromY - 2) != null) return false;
 
         // Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
         int sens = isWhite ? 1 : -1;
