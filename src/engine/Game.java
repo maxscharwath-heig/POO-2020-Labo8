@@ -2,8 +2,10 @@ package engine;
 
 import chess.ChessController;
 import chess.ChessView;
+import chess.PieceType;
 import chess.PlayerColor;
-import engine.piece.Piece;
+import engine.choices.PromotePiece;
+import engine.piece.*;
 
 public class Game implements ChessController {
 
@@ -14,13 +16,32 @@ public class Game implements ChessController {
     private int rounds = 0;
     private boolean hasMoved = false;
 
-    public boolean playerHasMoved() {
+    private boolean playerHasMoved() {
         return this.hasMoved;
     }
 
-    public void nextRound() {
+    private void afterMove(Piece piece, int x, int y) {
+        if (board.isPawnPromotable(x, y)) {
+            PromotePiece promoted = cv.askUser("Promotion", "Quelle promotion voulez-vous ?",
+                    new PromotePiece(new QueenPiece(piece.color())),
+                    new PromotePiece(new RookPiece(piece.color())),
+                    new PromotePiece(new KnightPiece(piece.color())),
+                    new PromotePiece(new BishopPiece(piece.color()))
+            );
+            board.setPiece(x, y, promoted.getPiece());
+            cv.putPiece(promoted.getPiece().type(), promoted.getPiece().color(), x, y);
+        }
+    }
+
+    private void nextRound() {
         hasMoved = false;
         ++rounds;
+
+        if(board.isGameOver()){
+            cv.displayMessage("Le roi est mort, "+board.getWinner()+" est le gagnant!");
+            return;
+        }
+
         cv.displayMessage(getPlayerColor() == PlayerColor.WHITE ? "Aux Blancs" : "Aux Noirs");
         if (board.checkmate(getPlayerColor())) {
             cv.displayMessage(getPlayerColor() + " est en echec et mat");
@@ -40,6 +61,8 @@ public class Game implements ChessController {
 
     @Override
     public boolean move(int fromX, int fromY, int toX, int toY) {
+        if(board.isGameOver())return false;
+
         Piece piece = board.getPiece(fromX, fromY);
         if (piece == null) return false;
 
@@ -52,6 +75,7 @@ public class Game implements ChessController {
         if (board.movePiece(fromX, fromY, toX, toY)) {
             cv.removePiece(fromX, fromY);
             cv.putPiece(piece.type(), piece.color(), toX, toY);
+            afterMove(piece, toX, toY);
             nextRound();
             return true;
         }

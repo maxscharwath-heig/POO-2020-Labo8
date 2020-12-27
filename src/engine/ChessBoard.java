@@ -1,23 +1,26 @@
 package engine;
 
+import chess.PieceType;
 import chess.PlayerColor;
 import engine.piece.*;
 import engine.utils.Position;
 
 import javax.swing.plaf.metal.MetalIconFactory;
+import javax.swing.text.PlainDocument;
 
 public class ChessBoard {
-    private final Piece[][] board = new Piece[8][8];
+    private final int boardSize = 8;
+    private final Piece[][] board = new Piece[boardSize][boardSize];
+    private PlayerColor winner = null;
 
-    private Position[] kingsPos = {
+    private final Position[] kingsPos = {
             new Position(),
             new Position(),
     };
 
-
     public ChessBoard() {
         initPlayerBoard(PlayerColor.WHITE, 0, 1);
-        initPlayerBoard(PlayerColor.BLACK, 7, 6);
+        initPlayerBoard(PlayerColor.BLACK, boardSize - 1, boardSize - 2);
     }
 
     /**
@@ -45,13 +48,32 @@ public class ChessBoard {
     }
 
     public Piece getPiece(int posX, int posY) {
-        if (posX < 0 || posY < 0 || posX >= 8 || posY >= 8) return null; //TODO lol c'est moche
+        if (posX < 0 || posY < 0 || posX >= boardSize || posY >= boardSize) return null; //TODO lol c'est moche
         return board[posY][posX];
+    }
+
+    private void killed(Piece killer, Piece killed, int x, int y) {
+        if (killed.type() == PieceType.KING) {
+            winner = killer.color();
+        }
+    }
+
+    //TODO check match null;
+    public boolean isGameOver() {
+        return winner != null;
+    }
+
+    public PlayerColor getWinner() {
+        return winner;
     }
 
     public void setPiece(int fromX, int fromY, int toX, int toY) {
         board[toY][toX] = board[fromY][fromX];
         board[fromY][fromX] = null;
+    }
+
+    public void setPiece(int x, int y, Piece piece) {
+        board[y][x] = piece;
     }
 
     private KingPiece getKing(PlayerColor color) {
@@ -64,8 +86,8 @@ public class ChessBoard {
         Piece to = getPiece(toX, toY);
         boolean isDangerous = false;
         setPiece(fromX, fromY, toX, toY);
-        for (int x = 0; x < 8; ++x) {
-            for (int y = 0; y < 8; ++y) {
+        for (int x = 0; x < boardSize; ++x) {
+            for (int y = 0; y < boardSize; ++y) {
                 if (x == toX && y == toY) continue;
                 Piece piece = getPiece(x, y);
                 if (piece != null && piece.canMove(this, x, y, toX, toY)) {
@@ -94,7 +116,7 @@ public class ChessBoard {
         for (int x = kingPos.x - 1; x <= kingPos.x + 1; ++x) {
             for (int y = kingPos.y - 1; y <= kingPos.y + 1; ++y) {
                 if (x == kingPos.x && y == kingPos.y) continue;
-                if (x < 0 || y < 0 || x >= 8 || y >= 8) continue;
+                if (x < 0 || y < 0 || x >= boardSize || y >= boardSize) continue;
                 if (king.canMove(this, kingPos.x, kingPos.y, x, y)) {
                     a++;
                     if (isADangerousPlace(kingPos.x, kingPos.y, x, y)) {
@@ -103,7 +125,7 @@ public class ChessBoard {
                 }
             }
         }
-        System.out.println(king+" "+a+" "+b);
+        System.out.println(king + " " + a + " " + b);
         return a > 0 && a == b;
         /**
          * 1) Vérifier que le roi n'as pas de mouvement valable
@@ -133,11 +155,17 @@ public class ChessBoard {
             kingsPos[(p.color() == PlayerColor.WHITE) ? 0 : 1].set(toX, toY);
             System.out.println(kingsPos[0].x + " " + kingsPos[0].y + "-" + kingsPos[1].x + " " + kingsPos[1].y);
         }
+        if (board[toY][toX] != null) killed(p, board[toY][toX], toX, toY);
         setPiece(fromX, fromY, toX, toY);
-
-
         p.setMoved(true);
         return true;
+    }
+
+    public boolean isPawnPromotable(int x, int y) {
+        Piece p = getPiece(x, y);
+        if (p.type() != PieceType.PAWN) return false;
+        return (p.color() == PlayerColor.WHITE && y == boardSize - 1 ||
+                p.color() == PlayerColor.BLACK && y == 0);
     }
 
     public Piece[][] board() {

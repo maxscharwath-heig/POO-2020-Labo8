@@ -15,4 +15,10 @@ public class KnightPiece extends Piece {
                 ((Math.abs(toX - fromX) == 2 && Math.abs(toY - fromY) == 1) ||
                         (Math.abs(toX - fromX) == 1 && Math.abs(toY - fromY) == 2));
     }
+
+
+    @Override
+    public String getPieceName() {
+        return "Knight";
+    }
 }

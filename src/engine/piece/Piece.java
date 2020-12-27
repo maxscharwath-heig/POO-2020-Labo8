@@ -14,6 +14,9 @@ public abstract class Piece {
         this.color = color;
     }
 
+    public String getPieceName(){
+        return "Piece";
+    }
 
     public PieceType type() {
         return type;

@@ -3,6 +3,7 @@ package engine.piece;
 import chess.PieceType;
 import chess.PlayerColor;
 import engine.ChessBoard;
+import engine.utils.GenericMovement;
 
 public class BishopPiece extends Piece {
     public BishopPiece(PlayerColor color) {
@@ -11,20 +12,13 @@ public class BishopPiece extends Piece {
 
     @Override
     public boolean canMove(ChessBoard board, int fromX, int fromY, int toX, int toY) {
+        return super.canMove(board, fromX, fromY, toX, toY) &&
+                GenericMovement.diagonalMovement(board, fromX, fromY, toX, toY);
 
-        if (!super.canMove(board, fromX, fromY, toX, toY)) return false;
-        int dx = toX - fromX;
-        int dy = toY - fromY;
-        if (dy == 0) return false;
-        int p = dx / dy;
-        if (Math.abs(p) != 1) return false;
-        int d = dx > 0 ? 1 : -1;
+    }
 
-        for (int i = 1; i < dx * d; ++i) {
-            if (board.getPiece(fromX + i * d, fromY + i * d * p) != null) return false;
-        }
-
-        return true;
-
+    @Override
+    public String getPieceName() {
+        return "Bishop";
     }
 }

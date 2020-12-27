@@ -34,7 +34,13 @@ public class PawnPiece extends Piece {
         if (isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1)) return false;
         if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
 
-        //Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
+        //Le pion bouge de 2 cases mais un ennemi est sur le chemin
+        if (isWhite && dy == 2 && board.getPiece(fromX,fromY+1) != null) return false;
+        if (!isWhite && dy == -2 && board.getPiece(fromX,fromY-1) != null) return false;
+        if (isWhite && dy == 2 && board.getPiece(fromX,fromY+2) != null) return false;
+        if (!isWhite && dy == -2 && board.getPiece(fromX,fromY-2) != null) return false;
+
+        // Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
         int sens = isWhite ? 1 : -1;
         if (dy == sens) {
             if (Math.abs(dx) == 1 && board.getPiece(toX, toY) == null) {
@@ -42,5 +48,10 @@ public class PawnPiece extends Piece {
             } else return Math.abs(dx) != 0 || board.getPiece(toX, toY) == null;
         }
         return true;
+    }
+
+    @Override
+    public String getPieceName() {
+        return "Pawn";
     }
 }
