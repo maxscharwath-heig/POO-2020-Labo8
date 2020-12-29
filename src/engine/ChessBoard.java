@@ -8,8 +8,7 @@ import engine.utils.Position;
 import java.util.ArrayList;
 
 public class ChessBoard {
-    static
-    final int boardSize = 8;
+    static final int boardSize = 8;
     private final Piece[][] board = new Piece[boardSize][boardSize];
     private final Position[] kingsPos = {
             new Position(),
@@ -128,7 +127,7 @@ public class ChessBoard {
      *
      * @return vrai si winner n'est pas NULL
      */
-    //TODO check match null;
+    //TODO bonus check match null;
     public boolean isGameOver() {
         return winner != null;
     }
