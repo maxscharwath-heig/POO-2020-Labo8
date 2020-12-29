@@ -3,7 +3,6 @@ package engine;
 import chess.PieceType;
 import chess.PlayerColor;
 import engine.piece.*;
-import engine.utils.Lol;
 import engine.utils.Position;
 
 import java.util.ArrayList;
@@ -86,13 +85,6 @@ public class ChessBoard {
      * @param killed piece supprimée
      */
     private void killed(Piece killer, Piece killed) {
-        {
-            if (killed.type() == PieceType.PAWN) Lol.playSound("deathSoundRoblox.wav");
-            else if (killed.type() == PieceType.BISHOP) Lol.playSound("deathSoundMurloc.wav");
-            else if (killed.type() == PieceType.KING) Lol.playSound("deathSoundMGS.wav");
-            else if (killed.type() == PieceType.ROOK) Lol.playSound("deathSoundYoda.wav");
-            else Lol.playSound("deathSoundMinecraft.wav");
-        } //TODO sound
         if (killed.type() == PieceType.KING) {
             winner = killer.color();
         }
@@ -308,7 +300,7 @@ public class ChessBoard {
      *
      * @param x coordonnée X de la pièce
      * @param y coordonnée Y de la pièce
-     * @return
+     * @return vrai si pièce promouvable
      */
     public boolean isPromotable(int x, int y) {
         Piece p = getPiece(x, y);

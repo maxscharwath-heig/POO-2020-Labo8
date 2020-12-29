@@ -5,7 +5,6 @@ import chess.ChessView;
 import chess.PlayerColor;
 import engine.choices.PromotePiece;
 import engine.piece.*;
-import engine.utils.Lol;
 import engine.utils.Position;
 
 public class GameController implements ChessController {
@@ -30,9 +29,6 @@ public class GameController implements ChessController {
                     new PromotePiece(new KnightPiece(piece.color())),
                     new PromotePiece(new BishopPiece(piece.color()))
             );
-            {
-                Lol.playSound("powerUp.wav");
-            }//TODO Sound
             board.setPiece(x, y, promoted.getPiece());
         }
     }
