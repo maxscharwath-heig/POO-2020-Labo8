@@ -11,8 +11,8 @@ public abstract class Piece {
 
     /**
      *
-     * @param type
-     * @param color
+     * @param type Le type de la pièce (Roi, Pion, etc)
+     * @param color La couleur de la pièce
      */
     public Piece(PieceType type, PlayerColor color) {
         this.type = type;
@@ -21,36 +21,36 @@ public abstract class Piece {
 
     /**
      *
-     * @return
+     * @return Le nom de la pièce
      */
     public String getPieceName() {
         return "Piece";
     }
 
     /**
-     *
-     * @return
+     * getter du type de la pièce
+     * @return Le type de la pièce
      */
     public PieceType type() {
         return type;
     }
 
     /**
-     *
-     * @return
+     * getter de la couleur de la pièce
+     * @return La couleur de la pièce
      */
     public PlayerColor color() {
         return color;
     }
 
     /**
-     *
-     * @param board
-     * @param fromX
-     * @param fromY
-     * @param toX
-     * @param toY
-     * @return
+     * Indique si un déplacement de la case (fromX, fromY) à la case (toX, toY) est possible
+     * @param board L'échiquier de la partie
+     * @param fromX coordonnée X de la case de départ
+     * @param fromY coordonnée Y de la case de départ
+     * @param toX coordonnée X de la case d'arrivée
+     * @param toY coordonnée Y de la case d'arrivée
+     * @return vrai si le déplacement est possible, faux dans la négative
      */
     public boolean canMove(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         Piece arrivee = board.getPiece(toX, toY);
@@ -59,7 +59,7 @@ public abstract class Piece {
     }
 
     /**
-     *
+     * setter de hasMoved
      * @param value
      */
     public void setMoved(boolean value) {
@@ -67,16 +67,16 @@ public abstract class Piece {
     }
 
     /**
-     *
-     * @return
+     * getter de hasMoved
+     * @return valeur de hasMoved
      */
     public boolean hasMoved() {
         return hasMoved;
     }
 
     /**
-     *
-     * @return
+     * toString de la pièce
+     * @return Un String contenant le nom de la pièce ainsi que sa couleur
      */
     @Override
     public String toString() {

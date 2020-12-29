@@ -2,15 +2,15 @@ package engine.utils;
 
 import engine.ChessBoard;
 
-public class GenericMovement {
+public abstract class GenericMovement {
     /**
-     *
-     * @param board
-     * @param fromX
-     * @param fromY
-     * @param toX
-     * @param toY
-     * @return
+     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement horizontal ou vertical légal sur l'échiquier
+     * @param board L'échiquier de la partie
+     * @param fromX coordonnée X de la case de départ
+     * @param fromY coordonnée Y de la case de départ
+     * @param toX coordonnée X de la case d'arrivée
+     * @param toY coordonnée Y de la case d'arrivée
+     * @return vrai si le mouvement est légal, faux dans la négative
      */
     public static boolean crossMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         if (fromX == toX) {//VERTICAL MOVE
@@ -28,13 +28,13 @@ public class GenericMovement {
     }
 
     /**
-     *
-     * @param board
-     * @param fromX
-     * @param fromY
-     * @param toX
-     * @param toY
-     * @return
+     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement diagonal légal sur l'échiquier
+     * @param board L'échiquier de la partie
+     * @param fromX coordonnée X de la case de départ
+     * @param fromY coordonnée Y de la case de départ
+     * @param toX coordonnée X de la case d'arrivée
+     * @param toY coordonnée Y de la case d'arrivée
+     * @return vrai si le mouvement est légal, faux dans la négative
      */
     public static boolean diagonalMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
         int dx = toX - fromX;

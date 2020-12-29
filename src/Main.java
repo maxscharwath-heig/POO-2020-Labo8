@@ -1,16 +1,16 @@
 import chess.ChessController;
 import chess.ChessView;
 import chess.views.gui.GUIView;
-import engine.Game;
+import engine.GameController;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO : 1. Création du contrôleur pour gérer le jeu d’échec
-        ChessController controller = new Game(); // Instancier un ChessController
-        // TODO 2. Création de la vue
+        // 1. Création du contrôleur pour gérer le jeu d’échec
+        ChessController controller = new GameController(); // Instancier un ChessController
+        // 2. Création de la vue
         ChessView view = new GUIView(controller); // mode GUI
         // = new ConsoleView(controller); // mode Console
-        // TODO 3 . Lancement du programme.
+        // 3 . Lancement du programme.
         controller.start(view);
     }
 }

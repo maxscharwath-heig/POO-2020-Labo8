@@ -8,62 +8,63 @@ import engine.piece.*;
 import engine.utils.Lol;
 import engine.utils.Position;
 
-public class Game implements ChessController {
+public class GameController implements ChessController {
 
     private ChessView cv;
 
     private ChessBoard board;
 
     private int rounds = 0;
-    private boolean hasMoved = false;
 
     /**
-     * @return
-     */
-    private boolean playerHasMoved() {
-        return this.hasMoved;
-    }
-
-    /**
-     * @param piece
-     * @param x
-     * @param y
+     * Contient les actions à faire après le mouvement d'une pièce (par exemple affichage du menu de promotion)
+     * @param piece la pièce à regarder
+     * @param x coordonnée x de la pièce
+     * @param y coordonnée y de la pièce
      */
     private void afterMove(Piece piece, int x, int y) {
-        if (board.isPawnPromotable(x, y)) {
-            PromotePiece promoted = cv.askUser("Promotion", "Quelle promotion voulez-vous ?",
+        if (board.isPromotable(x, y)) {
+            PromotePiece promoted = cv.askUser("Promotion", "Pick a promotion ?",
                     new PromotePiece(new QueenPiece(piece.color())),
                     new PromotePiece(new RookPiece(piece.color())),
                     new PromotePiece(new KnightPiece(piece.color())),
                     new PromotePiece(new BishopPiece(piece.color()))
             );
-            Lol.playSound("powerUp.wav");
+            {
+                Lol.playSound("powerUp.wav");
+            }//TODO Sound
             board.setPiece(x, y, promoted.getPiece());
         }
     }
 
     /**
-     *
+     * Passage au round suivant + affichage d'une victoire et d'un échec au roi si c'est le cas
      */
     private void nextRound() {
-        hasMoved = false;
         ++rounds;
 
         if (board.isGameOver()) {
-            cv.displayMessage("Le roi est mort, " + board.getWinner() + " est le gagnant!");
+            cv.displayMessage("The king is dead, " + board.getWinner() + " is the winner!");
             return;
         }
 
-        cv.displayMessage(getPlayerColor() == PlayerColor.WHITE ? "Aux Blancs" : "Aux Noirs");
-        if (board.checkmate(getPlayerColor())) {
+        cv.displayMessage(getCurrentPlayerColor() + " turn");
+        if (board.checkKingInCheck(getCurrentPlayerColor())) {
             cv.displayMessage("Check!");
         }
     }
 
-    PlayerColor getPlayerColor() {
+    /**
+     * Retourne la couleur du joueur actif (Le blanc joue aux rounds pairs et le noir aux rounds impairs)
+     * @return la couleur du joueur actif
+     */
+    private PlayerColor getCurrentPlayerColor() {
         return rounds % 2 == 0 ? PlayerColor.WHITE : PlayerColor.BLACK;
     }
 
+    /**
+     * Rafraichît l'interface en effectuant tous les mouvements du tour
+     */
     private void updateGUI() {
         for (Position pos : board.getUpdatedPositions()) {
             Piece p = board.getPiece(pos.x, pos.y);
@@ -74,6 +75,7 @@ public class Game implements ChessController {
     }
 
     /**
+     * Démarre la vue sélectionnée
      * @param view la vue à utiliser
      */
     @Override
@@ -84,11 +86,12 @@ public class Game implements ChessController {
     }
 
     /**
-     * @param fromX
-     * @param fromY
-     * @param toX
-     * @param toY
-     * @return
+     * Vérifie si le mouvement choisi est légal (affiche un messsage d'erreur si ce n'est pas le cas)
+     * @param fromX coordonnée X de la case de départ
+     * @param fromY coordonnée Y de la case de départ
+     * @param toX coordonnée X de la case d'arrivée
+     * @param toY coordonnée Y de la case d'arrivée
+     * @return vrai si le mouvement est légal, faux dans la négative
      */
     @Override
     public boolean move(int fromX, int fromY, int toX, int toY) {
@@ -97,8 +100,8 @@ public class Game implements ChessController {
         Piece piece = board.getPiece(fromX, fromY);
         if (piece == null) return false;
 
-        if (piece.color() != getPlayerColor()) {
-            cv.displayMessage("Ce n'est pas votre tour!");
+        if (piece.color() != getCurrentPlayerColor()) {
+            cv.displayMessage("It's not your turn");
             return false;
         }
 
@@ -108,26 +111,24 @@ public class Game implements ChessController {
             updateGUI();
             return true;
         }
-        cv.displayMessage("Mouvement illégal!");
+        cv.displayMessage("Illegal movement!");
         return false;
     }
 
     /**
-     *
+     * Commence une nouvelle partie en créant un nouvel échiquier
      */
     @Override
     public void newGame() {
         board = new ChessBoard();
-        Piece[][] pieces = board.board();
         rounds = 0;
-        hasMoved = false;
-        for (int x = 0; x < 8; ++x) {
-            for (int y = 0; y < 8; ++y) {
-                if (pieces[x][y] != null) {
-                    cv.putPiece(pieces[x][y].type(), pieces[x][y].color(), y, x);
+        for (int x = 0; x < ChessBoard.boardSize; ++x) {
+            for (int y = 0; y < ChessBoard.boardSize; ++y) {
+                Piece piece = board.getPiece(x,y);
+                if (piece != null) {
+                    cv.putPiece(piece.type(), piece.color(), x, y);
                 }
             }
         }
-        cv.displayMessage("Aux Blancs");
     }
 }
