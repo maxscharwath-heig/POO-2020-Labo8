@@ -16,16 +16,7 @@ public class ChessBoard {
             new Position(),
     };
     private PlayerColor winner = null;
-
     private final ArrayList<Position> updatedPositions = new ArrayList<>();
-
-    public ArrayList<Position> getUpdatedPositions() {
-        return updatedPositions;
-    }
-
-    public void clearUpdatedPositions() {
-        updatedPositions.clear();
-    }
 
     /**
      *
@@ -33,6 +24,14 @@ public class ChessBoard {
     public ChessBoard() {
         initPlayerBoard(PlayerColor.WHITE, 0, 1);
         initPlayerBoard(PlayerColor.BLACK, boardSize - 1, boardSize - 2);
+    }
+
+    public ArrayList<Position> getUpdatedPositions() {
+        return updatedPositions;
+    }
+
+    public void clearUpdatedPositions() {
+        updatedPositions.clear();
     }
 
     /**
@@ -79,7 +78,7 @@ public class ChessBoard {
         if (killed.type() == PieceType.PAWN) Lol.playSound("deathSoundRoblox.wav");
         else if (killed.type() == PieceType.BISHOP) Lol.playSound("deathSoundMurloc.wav");
         else if (killed.type() == PieceType.KING) Lol.playSound("deathSoundMGS.wav");
-        else if (killed.type() == PieceType.ROOK) Lol.playSound("deathSoundMinecraft.wav");
+        else if (killed.type() == PieceType.ROOK) Lol.playSound("deathSoundYoda.wav");
         else Lol.playSound("deathSoundMinecraft.wav");
 
         if (killed.type() == PieceType.KING) {
