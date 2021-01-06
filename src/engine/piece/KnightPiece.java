@@ -6,7 +6,6 @@ import engine.ChessBoard;
 
 public class KnightPiece extends Piece {
     /**
-     *
      * @param color
      */
     public KnightPiece(PlayerColor color) {
@@ -14,7 +13,6 @@ public class KnightPiece extends Piece {
     }
 
     /**
-     *
      * @param board
      * @param fromX
      * @param fromY
@@ -30,7 +28,6 @@ public class KnightPiece extends Piece {
     }
 
     /**
-     *
      * @return
      */
     @Override

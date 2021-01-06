@@ -5,11 +5,12 @@ import engine.ChessBoard;
 public abstract class GenericMovement {
     /**
      * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement horizontal ou vertical légal sur l'échiquier
+     *
      * @param board L'échiquier de la partie
      * @param fromX coordonnée X de la case de départ
      * @param fromY coordonnée Y de la case de départ
-     * @param toX coordonnée X de la case d'arrivée
-     * @param toY coordonnée Y de la case d'arrivée
+     * @param toX   coordonnée X de la case d'arrivée
+     * @param toY   coordonnée Y de la case d'arrivée
      * @return vrai si le mouvement est légal, faux dans la négative
      */
     public static boolean crossMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
@@ -29,11 +30,12 @@ public abstract class GenericMovement {
 
     /**
      * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement diagonal légal sur l'échiquier
+     *
      * @param board L'échiquier de la partie
      * @param fromX coordonnée X de la case de départ
      * @param fromY coordonnée Y de la case de départ
-     * @param toX coordonnée X de la case d'arrivée
-     * @param toY coordonnée Y de la case d'arrivée
+     * @param toX   coordonnée X de la case d'arrivée
+     * @param toY   coordonnée Y de la case d'arrivée
      * @return vrai si le mouvement est légal, faux dans la négative
      */
     public static boolean diagonalMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
@@ -44,7 +46,8 @@ public abstract class GenericMovement {
         int p = dx / dy;
         int d = dx > 0 ? 1 : -1;
         for (int i = 1; i < dx * d; ++i) {
-            if (board.getPiece(fromX + i * d, fromY + i * d * p) != null) return false;
+            if (board.getPiece(fromX + i * d, fromY + i * d * p) != null)
+                return false;
         }
         return true;
     }

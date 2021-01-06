@@ -45,6 +45,7 @@ public class GUIView extends BaseView<ImageIcon> {
     private final JLabel messageLabel = new JLabel("");
     private final ChessSquare[][] chessBoardSquares = new ChessSquare[8][8];
     private ChessSquare lastPressed = null;
+
     public GUIView(ChessController controller) {
         super(controller);
         try {

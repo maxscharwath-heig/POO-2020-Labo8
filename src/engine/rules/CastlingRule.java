@@ -4,6 +4,9 @@ import chess.PieceType;
 import engine.ChessBoard;
 import engine.piece.Piece;
 
+/**
+ * Régle qui vérifie et execute le Roque
+ */
 public class CastlingRule extends Rule {
 
 
@@ -23,7 +26,8 @@ public class CastlingRule extends Rule {
     private boolean doCastling(int fromX, int fromY, int toX, int toY) { //roque
         if (board.isADangerousPlace(fromX, fromY)) return false;
         Piece king = board.getPiece(fromX, fromY);
-        if (king == null || king.type() != PieceType.KING || king.hasMoved()) return false;
+        if (king == null || king.type() != PieceType.KING || king.hasMoved())
+            return false;
         if (toY != fromY) return false;
         if (Math.abs(toX - fromX) != 2) return false;
         int sens = (toX - fromX) > 0 ? -1 : 1;
@@ -37,7 +41,8 @@ public class CastlingRule extends Rule {
 
         int rookX = (toX - fromX) > 0 ? ChessBoard.boardSize - 1 : 0;
         Piece rook = board.getPiece(rookX, fromY);
-        if (rook == null || rook.type() != PieceType.ROOK || rook.hasMoved()) return false;
+        if (rook == null || rook.type() != PieceType.ROOK || rook.hasMoved())
+            return false;
 
         board.setPieceTo(rookX, fromY, toX + sens, fromY);
         board.setPieceTo(fromX, fromY, toX, toY);

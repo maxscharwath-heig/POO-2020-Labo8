@@ -7,7 +7,6 @@ import engine.utils.GenericMovement;
 
 public class RookPiece extends Piece {
     /**
-     *
      * @param color
      */
     public RookPiece(PlayerColor color) {
@@ -15,7 +14,6 @@ public class RookPiece extends Piece {
     }
 
     /**
-     *
      * @param board
      * @param fromX
      * @param fromY
@@ -30,7 +28,6 @@ public class RookPiece extends Piece {
     }
 
     /**
-     *
      * @return
      */
     @Override

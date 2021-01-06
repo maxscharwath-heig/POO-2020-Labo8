@@ -8,7 +8,6 @@ import engine.utils.GenericMovement;
 public class QueenPiece extends Piece {
 
     /**
-     *
      * @param color
      */
     public QueenPiece(PlayerColor color) {
@@ -17,7 +16,6 @@ public class QueenPiece extends Piece {
     }
 
     /**
-     *
      * @param board
      * @param fromX
      * @param fromY
@@ -34,7 +32,6 @@ public class QueenPiece extends Piece {
     }
 
     /**
-     *
      * @return
      */
     @Override

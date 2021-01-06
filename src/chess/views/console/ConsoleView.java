@@ -14,7 +14,7 @@ public class ConsoleView extends BaseView<String> {
 
     private final static Scanner scanner = new Scanner(System.in);
 
-  private final static Pattern movementPattern = Pattern.compile("[a-h][1-8][a-h][1-8]");
+    private final static Pattern movementPattern = Pattern.compile("[a-h][1-8][a-h][1-8]");
     private final static String EMPTY_CELL = " ";
     private final static String UNKNOWN_CELL = "?";
     private final String checkMessage = "";

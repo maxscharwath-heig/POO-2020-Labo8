@@ -7,7 +7,6 @@ import engine.utils.GenericMovement;
 
 public class BishopPiece extends Piece {
     /**
-     *
      * @param color
      */
     public BishopPiece(PlayerColor color) {
@@ -15,7 +14,6 @@ public class BishopPiece extends Piece {
     }
 
     /**
-     *
      * @param board
      * @param fromX
      * @param fromY
@@ -31,7 +29,6 @@ public class BishopPiece extends Piece {
     }
 
     /**
-     *
      * @return
      */
     @Override

@@ -22,8 +22,8 @@ public class ChessBoard {
             new Position(),
             new Position(),
     };
-    private PlayerColor winner = null;
     private final ArrayList<Position> updatedPositions = new ArrayList<>();
+    private PlayerColor winner = null;
     private Piece[][] board = new Piece[boardSize][boardSize];
     private Piece lastMovedPiece = null;
     private Position lastMovedPiecePos = null;
@@ -37,16 +37,16 @@ public class ChessBoard {
         this.board = board;
     }
 
-    public Piece getLastMovedPiece() {
-        return lastMovedPiece;
-    }
-
     /**
      * construction de l'échiquier :
      */
     public ChessBoard() {
         initPlayerBoard(PlayerColor.WHITE, 0, 1);
         initPlayerBoard(PlayerColor.BLACK, boardSize - 1, boardSize - 2);
+    }
+
+    public Piece getLastMovedPiece() {
+        return lastMovedPiece;
     }
 
     public Position getLastMovedPiecePos() {
@@ -144,7 +144,8 @@ public class ChessBoard {
      * @return la pièce à la position (x,y)
      */
     public Piece getPiece(int posX, int posY) {
-        if (posX < 0 || posY < 0 || posX >= boardSize || posY >= boardSize) return null;
+        if (posX < 0 || posY < 0 || posX >= boardSize || posY >= boardSize)
+            return null;
         return board[posY][posX];
     }
 

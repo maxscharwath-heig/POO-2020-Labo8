@@ -6,6 +6,9 @@ import engine.ChessBoard;
 import engine.piece.Piece;
 import engine.utils.Position;
 
+/**
+ * Regle qui vérifie et execute la règle de En Passant
+ */
 public class EnPassantRule extends Rule {
     public EnPassantRule(ChessBoard board) {
         super(board);
@@ -25,15 +28,18 @@ public class EnPassantRule extends Rule {
 
         int sens = p.color() == PlayerColor.WHITE ? 1 : -1;
         //pas fait un mouvement en diagonale
-        if (toY != fromY + sens || (toX != fromX + 1 && toX != fromX - 1)) return RuleResult.IGNORE;
+        if (toY != fromY + sens || (toX != fromX + 1 && toX != fromX - 1))
+            return RuleResult.IGNORE;
 
         Piece lastMoved = board.getLastMovedPiece();
         Position lastPosLastMoved = board.getLastMovedPiecePos();
 
-        if (lastPosLastMoved == null || lastMoved == null) return RuleResult.IGNORE;
+        if (lastPosLastMoved == null || lastMoved == null)
+            return RuleResult.IGNORE;
         if (lastMoved.type() != PieceType.PAWN ||
                 lastMoved.color() == p.color() ||
-                Math.abs(lastPosLastMoved.y - fromY) != 2) return RuleResult.IGNORE;
+                Math.abs(lastPosLastMoved.y - fromY) != 2)
+            return RuleResult.IGNORE;
 
         //vérifier si pièce peut être prise en passant
         //à gauche de fromX

@@ -12,7 +12,6 @@ public class Position {
     }
 
     /**
-     *
      * @param x
      * @param y
      */
@@ -21,7 +20,6 @@ public class Position {
     }
 
     /**
-     *
      * @param x
      * @param y
      * @return

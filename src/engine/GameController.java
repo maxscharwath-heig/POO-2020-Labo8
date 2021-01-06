@@ -12,12 +12,11 @@ public class GameController implements ChessController {
     private ChessView cv;
 
     private ChessBoard board;
+    private int rounds = 0;
 
     public ChessBoard getBoard() {
         return board;
     }
-
-    private int rounds = 0;
 
     /**
      * Contient les actions à faire après le mouvement d'une pièce (par exemple affichage du menu de promotion)
@@ -57,6 +56,7 @@ public class GameController implements ChessController {
 
     /**
      * Retourne la couleur du joueur actif (Le blanc joue aux rounds pairs et le noir aux rounds impairs)
+     *
      * @return la couleur du joueur actif
      */
     private PlayerColor getCurrentPlayerColor() {
@@ -77,6 +77,7 @@ public class GameController implements ChessController {
 
     /**
      * Démarre la vue sélectionnée
+     *
      * @param view la vue à utiliser
      */
     @Override
@@ -88,10 +89,11 @@ public class GameController implements ChessController {
 
     /**
      * Vérifie si le mouvement choisi est légal (affiche un messsage d'erreur si ce n'est pas le cas)
+     *
      * @param fromX coordonnée X de la case de départ
      * @param fromY coordonnée Y de la case de départ
-     * @param toX coordonnée X de la case d'arrivée
-     * @param toY coordonnée Y de la case d'arrivée
+     * @param toX   coordonnée X de la case d'arrivée
+     * @param toY   coordonnée Y de la case d'arrivée
      * @return vrai si le mouvement est légal, faux dans la négative
      */
     @Override
@@ -126,7 +128,7 @@ public class GameController implements ChessController {
         rounds = 0;
         for (int x = 0; x < ChessBoard.boardSize; ++x) {
             for (int y = 0; y < ChessBoard.boardSize; ++y) {
-                Piece piece = board.getPiece(x,y);
+                Piece piece = board.getPiece(x, y);
                 if (piece != null) {
                     cv.putPiece(piece.type(), piece.color(), x, y);
                 }

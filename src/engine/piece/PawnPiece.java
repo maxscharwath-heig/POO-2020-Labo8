@@ -6,15 +6,6 @@ import engine.ChessBoard;
 
 public class PawnPiece extends Piece {
 
-    private boolean interceptable = false;
-
-    public boolean isInterceptable() {
-        return interceptable;
-    }
-
-    public void setInterceptable(boolean interceptable) {
-        this.interceptable = interceptable;
-    }
 
     public PawnPiece(PlayerColor color) {
         super(PieceType.PAWN, color);
@@ -41,13 +32,16 @@ public class PawnPiece extends Piece {
         if (isWhite && dy < 0) return false;
 
         //Le pion a déjà bougé et bouge de 2 cases
-        if (isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1)) return false;
-        if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
+        if (isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1))
+            return false;
+        if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1))
+            return false;
 
 
         //Le pion bouge de 2 cases mais un ennemi est sur le chemin
         for (int i = 1; i <= 2; ++i)
-            if (dy == 2 * sens && board.getPiece(fromX, fromY + i * sens) != null) return false;
+            if (dy == 2 * sens && board.getPiece(fromX, fromY + i * sens) != null)
+                return false;
 
         // Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
 
