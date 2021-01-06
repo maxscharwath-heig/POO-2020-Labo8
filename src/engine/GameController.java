@@ -13,13 +13,18 @@ public class GameController implements ChessController {
 
     private ChessBoard board;
 
+    public ChessBoard getBoard() {
+        return board;
+    }
+
     private int rounds = 0;
 
     /**
      * Contient les actions à faire après le mouvement d'une pièce (par exemple affichage du menu de promotion)
+     *
      * @param piece la pièce à regarder
-     * @param x coordonnée x de la pièce
-     * @param y coordonnée y de la pièce
+     * @param x     coordonnée x de la pièce
+     * @param y     coordonnée y de la pièce
      */
     private void afterMove(Piece piece, int x, int y) {
         if (board.isPromotable(x, y)) {
@@ -100,6 +105,7 @@ public class GameController implements ChessController {
             cv.displayMessage("It's not your turn");
             return false;
         }
+
 
         if (board.movePiece(fromX, fromY, toX, toY)) {
             afterMove(piece, toX, toY);

@@ -3,19 +3,43 @@ package engine;
 import chess.PieceType;
 import chess.PlayerColor;
 import engine.piece.*;
+import engine.rules.CastlingRule;
+import engine.rules.EnPassantRule;
+import engine.rules.KingCheckRule;
+import engine.rules.Rule;
 import engine.utils.Position;
 
 import java.util.ArrayList;
 
 public class ChessBoard {
-    static final int boardSize = 8;
-    private final Piece[][] board = new Piece[boardSize][boardSize];
+    static public final int boardSize = 8;
+    private final Rule[] rules = {
+            new KingCheckRule(this),
+            new CastlingRule(this),
+            new EnPassantRule(this),
+    };
     private final Position[] kingsPos = {
             new Position(),
             new Position(),
     };
     private PlayerColor winner = null;
     private final ArrayList<Position> updatedPositions = new ArrayList<>();
+    private Piece[][] board = new Piece[boardSize][boardSize];
+    private Piece lastMovedPiece = null;
+    private Position lastMovedPiecePos = null;
+
+    /**
+     * constructeur utiliser pour les tests
+     *
+     * @param board tableau de pieces
+     */
+    public ChessBoard(Piece[][] board) {
+        this.board = board;
+    }
+
+    public Piece getLastMovedPiece() {
+        return lastMovedPiece;
+    }
 
     /**
      * construction de l'échiquier :
@@ -23,6 +47,10 @@ public class ChessBoard {
     public ChessBoard() {
         initPlayerBoard(PlayerColor.WHITE, 0, 1);
         initPlayerBoard(PlayerColor.BLACK, boardSize - 1, boardSize - 2);
+    }
+
+    public Position getLastMovedPiecePos() {
+        return lastMovedPiecePos;
     }
 
     /**
@@ -89,39 +117,6 @@ public class ChessBoard {
         }
     }
 
-
-    /**
-     * Effectue un petit ou un grand roque
-     *
-     * @param fromX position x de départ du roi qui veut faire le roque
-     * @param fromY position y de départ du roi qui veut faire le roque
-     * @param toX   position x de déplacement pour faire le roque
-     * @param toY   position y de déplacement pour faire le roque
-     * @return vrai si on a effectué le roque
-     */
-    private boolean doCastling(int fromX, int fromY, int toX, int toY) { //roque
-        Piece king = getPiece(fromX, fromY);
-        if (king == null || king.type() != PieceType.KING || king.hasMoved()) return false;
-        if (toY != fromY) return false;
-        if (Math.abs(toX - fromX) != 2) return false;
-        int sens = (toX - fromX) > 0 ? -1 : 1;
-
-        if (
-                isADangerousPlace(fromX, fromY, toX, toY) ||
-                isADangerousPlace(fromX, fromY, toX + sens, toY) ||
-                getPiece(toX, toY) != null ||
-                getPiece(toX + sens, toY) != null)
-            return false;
-
-        int rookX = (toX - fromX) > 0 ? boardSize - 1 : 0;
-        Piece rook = getPiece(rookX, fromY);
-        if (rook == null || rook.type() != PieceType.ROOK || rook.hasMoved()) return false;
-
-        setPiece(rookX, fromY, toX + sens, fromY);
-        setPiece(fromX, fromY, toX, toY);
-        return true;
-    }
-
     /**
      * Indique si la partie est terminée
      *
@@ -161,7 +156,9 @@ public class ChessBoard {
      * @param toX   position x d'arrivée de la pièce déplacée
      * @param toY   position y d'arrivée de la pièce déplacée
      */
-    public void setPiece(int fromX, int fromY, int toX, int toY) {
+    public void setPieceTo(int fromX, int fromY, int toX, int toY) {
+        lastMovedPiece = getPiece(fromX, fromY);
+        lastMovedPiecePos = new Position(fromX, fromY);
         setPiece(toX, toY, getPiece(fromX, fromY));
         setPiece(fromX, fromY, null);
     }
@@ -239,36 +236,6 @@ public class ChessBoard {
         return isADangerousPlace(kingPos.x, kingPos.y);
     }
 
-    /** TODO échec et mat
-     * @param color couleur du joueur
-     * @return vrai si échec et mat
-     *
-     *
-    public boolean checkmate(PlayerColor color) { //échec et mat
-    Position kingPos = getKingPos(color);
-    int a = 0;
-    int b = 0;
-    Piece king = getPiece(kingPos.x, kingPos.y);
-    for (int x = kingPos.x - 1; x <= kingPos.x + 1; ++x) {
-    for (int y = kingPos.y - 1; y <= kingPos.y + 1; ++y) {
-    if (x == kingPos.x && y == kingPos.y) continue;
-    if (x < 0 || y < 0 || x >= boardSize || y >= boardSize) continue;
-    if (king.canMove(this, kingPos.x, kingPos.y, x, y)) {
-    a++;
-    if (isADangerousPlace(kingPos.x, kingPos.y, x, y)) {
-    b++;
-    }
-    }
-    }
-    }
-    return a > 0 && a == b;
-
-    // 1) Vérifier que le roi n'as pas de mouvement valable
-    // 2) Vérifier qu'il ne peut pas être sauvé par un allié
-
-    }*/
-
-
     /**
      * Bouge le pièce de la position (fromX, fromY) à la position (toX, toY)
      *
@@ -280,17 +247,27 @@ public class ChessBoard {
      */
     public boolean movePiece(int fromX, int fromY, int toX, int toY) {
         Piece p = getPiece(fromX, fromY);
-
+        if (p == null) return false;
         if (p.type() == PieceType.KING) {
             if (isADangerousPlace(fromX, fromY, toX, toY)) return false;
-            if (!isADangerousPlace(fromX, fromY) && doCastling(fromX, fromY, toX, toY)) {
-                return true;
+        }
+
+        //rules
+        for (Rule rule : rules) {
+            switch (rule.execute(fromX, fromY, toX, toY)) {
+                case ACCEPT_MOVEMENT:
+                    return true;
+                case REJECT_MOVEMENT:
+                    return false;
+                default:
+                    break;
             }
         }
+
         if (!p.canMove(this, fromX, fromY, toX, toY)) return false;
         if (getPiece(toX, toY) != null)
             killed(p, getPiece(toX, toY));
-        setPiece(fromX, fromY, toX, toY);
+        setPieceTo(fromX, fromY, toX, toY);
         return true;
     }
 

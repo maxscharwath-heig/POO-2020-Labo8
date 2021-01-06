@@ -5,6 +5,17 @@ import chess.PlayerColor;
 import engine.ChessBoard;
 
 public class PawnPiece extends Piece {
+
+    private boolean interceptable = false;
+
+    public boolean isInterceptable() {
+        return interceptable;
+    }
+
+    public void setInterceptable(boolean interceptable) {
+        this.interceptable = interceptable;
+    }
+
     public PawnPiece(PlayerColor color) {
         super(PieceType.PAWN, color);
     }
@@ -33,6 +44,7 @@ public class PawnPiece extends Piece {
         if (isWhite && dy == 2 && (fromY != 1 || Math.abs(dx) == 1)) return false;
         if (!isWhite && dy == -2 && (fromY != 6 || Math.abs(dx) == 1)) return false;
 
+
         //Le pion bouge de 2 cases mais un ennemi est sur le chemin
         for (int i = 1; i <= 2; ++i)
             if (dy == 2 * sens && board.getPiece(fromX, fromY + i * sens) != null) return false;
@@ -44,6 +56,7 @@ public class PawnPiece extends Piece {
                 return false;
             } else return Math.abs(dx) != 0 || board.getPiece(toX, toY) == null;
         }
+
         return true;
     }
 
