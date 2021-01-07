@@ -1,17 +1,22 @@
 package engine.utils;
 
+/**
+ * classe qui représente des position
+ */
 public class Position {
     public int x;
     public int y;
 
     /**
-     *
+     * Constructeur par défaut
      */
     public Position() {
         this(0, 0);
     }
 
     /**
+     * Constructeur avec paramètres
+     *
      * @param x
      * @param y
      */
@@ -20,6 +25,7 @@ public class Position {
     }
 
     /**
+     * Setter et getter
      * @param x
      * @param y
      * @return

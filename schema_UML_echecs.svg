@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" x="19mm" y="80mm"
+     width="1632mm" height="916mm" viewBox="19 80 1632 916">
+    <style type="text/css"><![CDATA[
+text { font:12px Dialog; }
+]]></style>
+    <line x1="930" y1="170" x2="700" y2="170"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="700" y1="170" x2="700" y2="270"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1320" y1="700" x2="1410" y2="700"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="960" y1="760" x2="700" y2="760"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="700" y1="760" x2="700" y2="685"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polyline points="940,768 960,760 940,752"
+              style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="240" y1="450" x2="380" y2="450"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polyline points="260,442 240,450 260,458"
+              style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="550" y1="685" x2="550" y2="790"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polyline points="558,705 550,685 542,705"
+              style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="190" y1="820" x2="320" y2="820"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polyline points="210,812 190,820 210,828"
+              style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1410" y1="350" x2="1410" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1410" y1="290" x2="1010" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1010" y1="290" x2="1010" y2="215"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1130" y1="350" x2="1130" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1130" y1="290" x2="1010" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1010" y1="290" x2="1010" y2="215"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="920" y1="350" x2="920" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="920" y1="290" x2="1010" y2="290"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1010" y1="290" x2="1010" y2="215"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1010,215 1018,235 1002,235"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="900" y1="920" x2="900" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="900" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="990" y1="920" x2="990" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="990" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1090" y1="920" x2="1090" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1090" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1190" y1="920" x2="1190" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1190" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1290" y1="920" x2="1290" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1290" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1380" y1="920" x2="1380" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1380" y1="900" x2="1140" y2="900"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1140" y1="900" x2="1140" y2="855"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:rgb(255,255,255);stroke:none"/>
+    <polygon points="1140,855 1148,875 1132,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+    <line x1="1480" y1="520" x2="1440" y2="520"
+          style="fill:none;stroke:rgb(64,64,64);stroke-dasharray:4;stroke-dashoffset:0"/>
+    <line x1="1510" y1="260" x2="1510" y2="224"
+          style="fill:none;stroke:rgb(64,64,64);stroke-dasharray:4;stroke-dashoffset:0"/>
+    <rect x="1450" y="120" width="150" height="102"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1450" y="120" width="150" height="102"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1496" y="139" style="font:11px Ubuntu">&lt;&lt; enum &gt;&gt;
+    </text>
+    <text x="1495" y="156" style="font:12px Ubuntu">RuleResult</text>
+    <line x1="1450" y1="169" x2="1600" y2="169"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1458" y="184" style="font:12px Ubuntu">IGNORE</text>
+    <text x="1458" y="198" style="font:12px Ubuntu">ACCEPT_MOVEMENT</text>
+    <text x="1458" y="212" style="font:12px Ubuntu">REJECT_MOVEMENT</text>
+    <rect x="1380" y="350" width="150" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1380" y="350" width="150" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1414" y="372" style="font:12px Ubuntu">KingCheckRule</text>
+    <line x1="1380" y1="385" x2="1530" y2="385"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1380" y1="395" x2="1530" y2="395"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="1010" y="350" width="350" height="69"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1010" y="350" width="350" height="69"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1151" y="372" style="font:12px Ubuntu">CastlingRule</text>
+    <line x1="1010" y1="385" x2="1360" y2="385"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1010" y1="395" x2="1360" y2="395"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1018" y="410" style="font:12px Ubuntu">- doCasteling (fromX : int,
+        fromY : int, toX : int, toY : int) : ...
+    </text>
+    <rect x="840" y="350" width="150" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="840" y="350" width="150" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="875" y="372" style="font:12px Ubuntu">EnPassantRule</text>
+    <line x1="840" y1="385" x2="990" y2="385"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="840" y1="395" x2="990" y2="395"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="930" y="130" width="370" height="83"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="930" y="130" width="370" height="83"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1103" y="152" style="font:12px Ubuntu">Rule</text>
+    <line x1="930" y1="165" x2="1300" y2="165"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="930" y1="175" x2="1300" y2="175"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="938" y="190" style="font:12px Ubuntu">+ Rule (board : ChessBoard)
+    </text>
+    <text x="938" y="204" style="font:12px Ubuntu">+ execute (fromX : int, fromY
+        : int, toX : int, toY : int) : RuleRe...
+    </text>
+    <rect x="910" y="490" width="530" height="83"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="910" y="490" width="530" height="83"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1124" y="512" style="font:12px Ubuntu">GenericMovement</text>
+    <line x1="910" y1="525" x2="1440" y2="525"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="910" y1="535" x2="1440" y2="535"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="918" y="550" style="font:12px Ubuntu">+ crossMovement (board :
+        ChessBoard, fromX : int, fromY : int, toX : int, toY : int) : boolean
+    </text>
+    <text x="918" y="564" style="font:12px Ubuntu">+ diagonalMovement (board :
+        ChessBoard, fromX : int, fromY : int, toX : int, toY : int) : bool...
+    </text>
+    <rect x="960" y="650" width="360" height="195"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="960" y="650" width="360" height="195"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1125" y="672" style="font:12px Ubuntu">Piece</text>
+    <line x1="960" y1="685" x2="1320" y2="685"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="968" y="700" style="font:12px Ubuntu">- type : PieceType</text>
+    <text x="968" y="714" style="font:12px Ubuntu">- color : PlayerColor</text>
+    <text x="968" y="728" style="font:12px Ubuntu">- hasMoved : boolean</text>
+    <line x1="960" y1="737" x2="1320" y2="737"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="968" y="752" style="font:12px Ubuntu">+ Piece (type : PieceType,
+        color : PlayerColor)
+    </text>
+    <text x="968" y="766" style="font:12px Ubuntu">+ getPieceName () : String
+    </text>
+    <text x="968" y="780" style="font:12px Ubuntu">+ type() () : PieceType
+    </text>
+    <text x="968" y="794" style="font:12px Ubuntu">+ color() () : PlayerColor
+    </text>
+    <text x="968" y="808" style="font:12px Ubuntu">+ canMove (board :
+        ChessBoard, p : int, p : int, p : int) : boole...
+    </text>
+    <text x="968" y="822" style="font:12px Ubuntu">+ hasMoved () : boolean
+    </text>
+    <text x="968" y="836" style="font:12px Ubuntu">+ toString () : String</text>
+    <rect x="60" y="360" width="180" height="125"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="60" y="360" width="180" height="125"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="127" y="382" style="font:12px Ubuntu">Position</text>
+    <line x1="60" y1="395" x2="240" y2="395"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="68" y="410" style="font:12px Ubuntu">+ x : int</text>
+    <text x="68" y="424" style="font:12px Ubuntu">+ y : int</text>
+    <line x1="60" y1="433" x2="240" y2="433"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="68" y="448" style="font:12px Ubuntu">+ Position ()</text>
+    <text x="68" y="462" style="font:12px Ubuntu">+ Position ()</text>
+    <text x="68" y="476" style="font:12px Ubuntu">+ set (x : int, y : int) :
+        Position
+    </text>
+    <rect x="380" y="270" width="420" height="391"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="380" y="270" width="420" height="391"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="558" y="292" style="font:12px Ubuntu">ChessBoard</text>
+    <line x1="380" y1="305" x2="800" y2="305"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="388" y="320" style="font:12px Ubuntu">- boardSize : int</text>
+    <text x="388" y="334" style="font:12px Ubuntu">- board : Piece[][]</text>
+    <text x="388" y="348" style="font:12px Ubuntu">- kingsPos : Position[]
+    </text>
+    <text x="388" y="362" style="font:12px Ubuntu">- rules : Rule[]</text>
+    <text x="388" y="376" style="font:12px Ubuntu">- lastMovedPiecePos :
+        Position
+    </text>
+    <text x="388" y="390" style="font:12px Ubuntu">- lastMovedPiece : Piece
+    </text>
+    <text x="388" y="404" style="font:12px Ubuntu">- upadtePositions : ArrayList&lt;Position&gt;</text>
+    <text x="388" y="418" style="font:12px Ubuntu">- winner : PlayerColor</text>
+    <line x1="380" y1="427" x2="800" y2="427"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="388" y="442" style="font:12px Ubuntu">+ ChessBoard ()</text>
+    <text x="388" y="456" style="font:12px Ubuntu">+ clearUpdatePosition () :
+        void
+    </text>
+    <text x="388" y="470" style="font:12px Ubuntu">+ getPiece (x : int, y : int)
+        : Piece
+    </text>
+    <text x="388" y="484" style="font:12px Ubuntu">+ setPiece (fromX : int,
+        fromY : int, toX : int, toY : int) : void
+    </text>
+    <text x="388" y="498" style="font:12px Ubuntu">+ setPiece (x : int, y : int,
+        piece : Piece) : void
+    </text>
+    <text x="388" y="512" style="font:12px Ubuntu">+ isADangerousPlace (x : int,
+        y : int) : boolean
+    </text>
+    <text x="388" y="526" style="font:12px Ubuntu">+ isADangerousPlace (fromX :
+        int, fromY : int, toX : int, toY : int) : boole...
+    </text>
+    <text x="388" y="540" style="font:12px Ubuntu">+ checkKingInCheck (color :
+        PlayerColor) : boolean
+    </text>
+    <text x="388" y="554" style="font:12px Ubuntu">+ movePiece (fromX : int,
+        fromY : int, toX : int, toY : int) : boolean
+    </text>
+    <text x="388" y="568" style="font:12px Ubuntu">+ isPromotable (x : int, y :
+        int) : boolean
+    </text>
+    <text x="388" y="582" style="font:12px Ubuntu">- getKingPos (color :
+        PlayerColor) : Position
+    </text>
+    <text x="388" y="596" style="font:12px Ubuntu">- initPlayerBoard (color :
+        PlayerColor, x : int, y : int) : void
+    </text>
+    <text x="388" y="610" style="font:12px Ubuntu">- killed (killer : Piece,
+        killed : Piece) : void
+    </text>
+    <text x="388" y="624" style="font:12px Ubuntu">+ getLastMovedPiecePos () :
+        Position
+    </text>
+    <text x="388" y="638" style="font:12px Ubuntu">+ getLastMovedPiece () :
+        Piece
+    </text>
+    <text x="388" y="652" style="font:12px Ubuntu">+ isGameOver () : boolean
+    </text>
+    <rect x="320" y="790" width="350" height="167"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="320" y="790" width="350" height="167"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="451" y="812" style="font:12px Ubuntu">GameController</text>
+    <line x1="320" y1="825" x2="670" y2="825"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="328" y="840" style="font:12px Ubuntu">- rounds : int</text>
+    <line x1="320" y1="849" x2="670" y2="849"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="328" y="864" style="font:12px Ubuntu">- afterMove (piece : Piece, x
+        : int, y : int) : void
+    </text>
+    <text x="328" y="878" style="font:12px Ubuntu">- nextRound () : void</text>
+    <text x="328" y="892" style="font:12px Ubuntu">- getCurrentPlayerColor() ()
+        : PlayerColor
+    </text>
+    <text x="328" y="906" style="font:12px Ubuntu">- updateGUI () : void</text>
+    <text x="328" y="920" style="font:12px Ubuntu">+ start (cv : ChessView) :
+        void
+    </text>
+    <text x="328" y="934" style="font:12px Ubuntu">+ move (fromX : int, fromY :
+        int, toX : int, toY : int) : boolean
+    </text>
+    <text x="328" y="948" style="font:12px Ubuntu">+ newGame () : void</text>
+    <rect x="1410" y="660" width="200" height="97"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1410" y="660" width="200" height="97"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1471" y="682" style="font:12px Ubuntu">PromotePiece</text>
+    <line x1="1410" y1="695" x2="1610" y2="695"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1410" y1="705" x2="1610" y2="705"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1418" y="720" style="font:12px Ubuntu">+ PromotePiece ()</text>
+    <text x="1418" y="734" style="font:12px Ubuntu">+ textValue () : String
+    </text>
+    <text x="1418" y="748" style="font:12px Ubuntu">+ toString (piece : Piece) :
+        String
+    </text>
+    <rect x="860" y="920" width="80" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="860" y="920" width="80" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="870" y="942" style="font:12px Ubuntu">PawnPiece</text>
+    <line x1="860" y1="955" x2="940" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="860" y1="965" x2="940" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="950" y="920" width="80" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="950" y="920" width="80" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="963" y="942" style="font:12px Ubuntu">KingPiece</text>
+    <line x1="950" y1="955" x2="1030" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="950" y1="965" x2="1030" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="1040" y="920" width="90" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1040" y="920" width="90" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1052" y="942" style="font:12px Ubuntu">KnightPiece</text>
+    <line x1="1040" y1="955" x2="1130" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1040" y1="965" x2="1130" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="1140" y="920" width="90" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1140" y="920" width="90" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1152" y="942" style="font:12px Ubuntu">QueenPiece</text>
+    <line x1="1140" y1="955" x2="1230" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1140" y1="965" x2="1230" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="1240" y="920" width="90" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1240" y="920" width="90" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1252" y="942" style="font:12px Ubuntu">BishopPiece</text>
+    <line x1="1240" y1="955" x2="1330" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1240" y1="965" x2="1330" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="1340" y="920" width="80" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="1340" y="920" width="80" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1351" y="942" style="font:12px Ubuntu">RookPiece</text>
+    <line x1="1340" y1="955" x2="1420" y2="955"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1340" y1="965" x2="1420" y2="965"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <rect x="40" y="800" width="150" height="55"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <rect x="40" y="800" width="150" height="55"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="85" y="822" style="font:12px Ubuntu">ChessView</text>
+    <line x1="40" y1="835" x2="190" y2="835"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="40" y1="845" x2="190" y2="845"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <polygon points="40,830 175,830 190,845 190,875 40,875"
+             style="fill:rgb(255,247,225);stroke:none"/>
+    <polygon points="40,830 175,830 190,845 190,875 40,875"
+             style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="175" y1="830" x2="175" y2="845"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="175" y1="845" x2="190" y2="845"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="45" y="850" style="font:12px Ubuntu">Voir</text>
+    <text x="70" y="850" style="font:12px Ubuntu">Schéma</text>
+    <text x="117" y="850" style="font:12px Ubuntu">UML</text>
+    <text x="145" y="850" style="font:12px Ubuntu">de</text>
+    <text x="162" y="850" style="font:12px Ubuntu">la</text>
+    <text x="45" y="865" style="font:12px Ubuntu">donnée</text>
+    <polygon points="1480,500 1615,500 1630,515 1630,575 1480,575"
+             style="fill:rgb(255,247,225);stroke:none"/>
+    <polygon points="1480,500 1615,500 1630,515 1630,575 1480,575"
+             style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1615" y1="500" x2="1615" y2="515"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1615" y1="515" x2="1630" y2="515"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1485" y="520" style="font:12px Ubuntu">utilisé</text>
+    <text x="1523" y="520" style="font:12px Ubuntu">par</text>
+    <text x="1544" y="520" style="font:12px Ubuntu">QueenPiece,</text>
+    <text x="1485" y="535" style="font:12px Ubuntu">BishopPiece,</text>
+    <text x="1485" y="550" style="font:12px Ubuntu">RookPiece</text>
+    <text x="1547" y="550" style="font:12px Ubuntu">dans</text>
+    <text x="1485" y="565" style="font:12px Ubuntu">canMove</text>
+    <polygon points="1460,260 1555,260 1570,275 1570,305 1460,305"
+             style="fill:rgb(255,247,225);stroke:none"/>
+    <polygon points="1460,260 1555,260 1570,275 1570,305 1460,305"
+             style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1555" y1="260" x2="1555" y2="275"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <line x1="1555" y1="275" x2="1570" y2="275"
+          style="fill:none;stroke:rgb(64,64,64);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="1465" y="280" style="font:12px Ubuntu">utilisé</text>
+    <text x="1503" y="280" style="font:12px Ubuntu">par</text>
+    <text x="1524" y="280" style="font:12px Ubuntu">Rule</text>
+    <text x="1465" y="295" style="font:12px Ubuntu">dans</text>
+    <text x="1494" y="295" style="font:12px Ubuntu">exécute</text>
+    <text x="770" y="156" style="font:14px Ubuntu">respecte &gt;</text>
+    <text x="917" y="162" style="font:14px Ubuntu">*</text>
+    <text x="687" y="262" style="font:14px Ubuntu">1</text>
+    <text x="1325" y="692" style="font:14px Ubuntu">1</text>
+    <text x="1397" y="692" style="font:14px Ubuntu">1</text>
+    <text x="799" y="778" style="font:14px Ubuntu">contient &gt;</text>
+    <text x="918" y="740" style="font:14px Ubuntu">0..64</text>
+    <text x="687" y="703" style="font:14px Ubuntu">1</text>
+    <text x="287" y="470" style="font:14px Ubuntu">&lt; contient</text>
+    <text x="245" y="442" style="font:14px Ubuntu">2</text>
+    <text x="367" y="442" style="font:14px Ubuntu">1</text>
+    <text x="557" y="749" style="font:14px Ubuntu">contient ^</text>
+    <text x="531" y="703" style="font:14px Ubuntu">1</text>
+    <text x="531" y="782" style="font:14px Ubuntu">1</text>
+    <text x="233" y="810" style="font:14px Ubuntu">&lt; utilise</text>
+    <text x="195" y="812" style="font:14px Ubuntu">1</text>
+    <text x="307" y="812" style="font:14px Ubuntu">1</text>
+    <path d="M20,81 L20,111 L96,111 Q126,111 126,81 L20,81"
+          style="fill:rgb(255,247,225);stroke:none"/>
+    <path d="M20,81 L20,111 L96,111 Q126,111 126,81 L20,81"
+          style="fill:none;stroke:rgb(65,65,65);stroke-width:1.2;stroke-linecap:square"/>
+    <text x="25" y="103" style="font:16px Ubuntu">Labo Echec</text>
+    <rect x="20" y="81" width="1629" height="913"
+          style="fill:none;stroke:rgb(64,64,64);stroke-linecap:square"/>
+</svg>

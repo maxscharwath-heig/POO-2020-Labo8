@@ -2,9 +2,13 @@ package engine.utils;
 
 import engine.ChessBoard;
 
+/**
+ * Classe vérifiant si des mouvements correspondent à un pattern
+ */
 public abstract class GenericMovement {
     /**
-     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement horizontal ou vertical légal sur l'échiquier
+     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement
+     * horizontal ou vertical légal sur l'échiquier
      *
      * @param board L'échiquier de la partie
      * @param fromX coordonnée X de la case de départ
@@ -13,7 +17,8 @@ public abstract class GenericMovement {
      * @param toY   coordonnée Y de la case d'arrivée
      * @return vrai si le mouvement est légal, faux dans la négative
      */
-    public static boolean crossMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
+    public static boolean crossMovement(ChessBoard board, int fromX, int fromY,
+                                        int toX, int toY) {
         if (fromX == toX) {//VERTICAL MOVE
             int delta = toY - fromY > 0 ? 1 : -1;
             for (int i = fromY + delta; i != toY; i += delta) {
@@ -29,7 +34,8 @@ public abstract class GenericMovement {
     }
 
     /**
-     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement diagonal légal sur l'échiquier
+     * Indique si le mouvement (fromX, fromY) à (toX, toY) est un mouvement
+     * diagonal légal sur l'échiquier
      *
      * @param board L'échiquier de la partie
      * @param fromX coordonnée X de la case de départ
@@ -38,7 +44,9 @@ public abstract class GenericMovement {
      * @param toY   coordonnée Y de la case d'arrivée
      * @return vrai si le mouvement est légal, faux dans la négative
      */
-    public static boolean diagonalMovement(ChessBoard board, int fromX, int fromY, int toX, int toY) {
+    public static boolean diagonalMovement(ChessBoard board,
+                                           int fromX, int fromY,
+                                           int toX, int toY) {
         int dx = toX - fromX;
         int dy = toY - fromY;
         if (dx == 0 || dy == 0) return false;

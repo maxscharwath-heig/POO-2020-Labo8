@@ -4,6 +4,9 @@ import chess.PieceType;
 import chess.PlayerColor;
 import engine.ChessBoard;
 
+/**
+ * Classe abstraite représentant une pièce de l'échiquier
+ */
 public abstract class Piece {
     private final PieceType type;
     private final PlayerColor color;

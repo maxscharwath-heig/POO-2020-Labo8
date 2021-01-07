@@ -7,27 +7,21 @@ import engine.piece.Piece;
 import engine.utils.Position;
 
 /**
- * Regle qui vérifie et execute la règle de En Passant
+ * Regle qui vérifie et execute la règle de la Prise en Passant
  */
 public class EnPassantRule extends Rule {
     public EnPassantRule(ChessBoard board) {
         super(board);
     }
 
-    /**
-     * @param fromX
-     * @param fromY
-     * @param toX
-     * @param toY
-     * @return
-     */
+
     @Override
     public RuleResult execute(int fromX, int fromY, int toX, int toY) {
         Piece p = board.getPiece(fromX, fromY);
         if (p == null || p.type() != PieceType.PAWN) return RuleResult.IGNORE;
 
         int sens = p.color() == PlayerColor.WHITE ? 1 : -1;
-        //pas fait un mouvement en diagonale
+
         if (toY != fromY + sens || (toX != fromX + 1 && toX != fromX - 1))
             return RuleResult.IGNORE;
 
@@ -41,16 +35,19 @@ public class EnPassantRule extends Rule {
                 Math.abs(lastPosLastMoved.y - fromY) != 2)
             return RuleResult.IGNORE;
 
-        //vérifier si pièce peut être prise en passant
-        //à gauche de fromX
+
         if (lastMoved == board.getPiece(fromX - 1, fromY)) {
-            board.setPieceTo(fromX, fromY, toX, toY); // bouge pion attaquant
-            board.setPiece(fromX - 1, fromY, null); // détruit pion attaqué
+
+            board.setPieceTo(fromX, fromY, toX, toY);
+
+            board.setPiece(fromX - 1, fromY, null);
             return RuleResult.ACCEPT_MOVEMENT;
-        } // à droite de fromX
+        }
         else if (lastMoved == board.getPiece(fromX + 1, fromY)) {
-            board.setPieceTo(fromX, fromY, toX, toY); // bouge pion attaquant
-            board.setPiece(fromX + 1, fromY, null); // détruit pion attaqué
+
+            board.setPieceTo(fromX, fromY, toX, toY);
+
+            board.setPiece(fromX + 1, fromY, null);
             return RuleResult.ACCEPT_MOVEMENT;
         }
 

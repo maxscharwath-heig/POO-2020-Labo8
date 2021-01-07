@@ -7,6 +7,10 @@ import engine.choices.PromotePiece;
 import engine.piece.*;
 import engine.utils.Position;
 
+/**
+ * classe qui s'occupe de gérer le jeu et les interactions entre la classe
+ * Chessboard et l'interface graphique
+ */
 public class GameController implements ChessController {
 
     private ChessView cv;
@@ -19,7 +23,8 @@ public class GameController implements ChessController {
     }
 
     /**
-     * Contient les actions à faire après le mouvement d'une pièce (par exemple affichage du menu de promotion)
+     * Contient les actions à faire après le mouvement d'une pièce (par exemple
+     * affichage du menu de promotion)
      *
      * @param piece la pièce à regarder
      * @param x     coordonnée x de la pièce
@@ -27,24 +32,27 @@ public class GameController implements ChessController {
      */
     private void afterMove(Piece piece, int x, int y) {
         if (board.isPromotable(x, y)) {
-            PromotePiece promoted = cv.askUser("Promotion", "Pick a promotion ?",
-                    new PromotePiece(new QueenPiece(piece.color())),
-                    new PromotePiece(new RookPiece(piece.color())),
-                    new PromotePiece(new KnightPiece(piece.color())),
-                    new PromotePiece(new BishopPiece(piece.color()))
-            );
+            PromotePiece promoted =
+                    cv.askUser("Promotion", "Pick a promotion ?",
+                            new PromotePiece(new QueenPiece(piece.color())),
+                            new PromotePiece(new RookPiece(piece.color())),
+                            new PromotePiece(new KnightPiece(piece.color())),
+                            new PromotePiece(new BishopPiece(piece.color()))
+                    );
             board.setPiece(x, y, promoted.getPiece());
         }
     }
 
     /**
-     * Passage au round suivant + affichage d'une victoire et d'un échec au roi si c'est le cas
+     * Passage au round suivant + affichage d'une victoire et d'un échec au
+     * roi si c'est le cas
      */
     private void nextRound() {
         ++rounds;
 
         if (board.isGameOver()) {
-            cv.displayMessage("The king is dead, " + board.getWinner() + " is the winner!");
+            cv.displayMessage("The king is dead, " + board.getWinner()
+                    + " is the winner!");
             return;
         }
 
@@ -55,7 +63,8 @@ public class GameController implements ChessController {
     }
 
     /**
-     * Retourne la couleur du joueur actif (Le blanc joue aux rounds pairs et le noir aux rounds impairs)
+     * Retourne la couleur du joueur actif (Le blanc joue aux rounds pairs et
+     * le noir aux rounds impairs)
      *
      * @return la couleur du joueur actif
      */
@@ -88,7 +97,8 @@ public class GameController implements ChessController {
     }
 
     /**
-     * Vérifie si le mouvement choisi est légal (affiche un messsage d'erreur si ce n'est pas le cas)
+     * Vérifie si le mouvement choisi est légal (affiche un messsage d'erreur
+     * si ce n'est pas le cas)
      *
      * @param fromX coordonnée X de la case de départ
      * @param fromY coordonnée Y de la case de départ

@@ -43,8 +43,8 @@ public class PawnPiece extends Piece {
             if (dy == 2 * sens && board.getPiece(fromX, fromY + i * sens) != null)
                 return false;
 
-        // Le pion ne peut pas aller en diagonale si il n'y a pas une pièce ennemie sur sa destination
-
+        // Le pion ne peut pas aller en diagonale si il n'y a pas une
+        // pièce ennemie sur sa destination
         if (dy == sens) {
             if (Math.abs(dx) == 1 && board.getPiece(toX, toY) == null) {
                 return false;

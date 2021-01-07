@@ -11,6 +11,9 @@ import engine.utils.Position;
 
 import java.util.ArrayList;
 
+/**
+ * Classe représentant l'échiquier du jeu
+ */
 public class ChessBoard {
     static public final int boardSize = 8;
     private final Rule[] rules = {
@@ -29,7 +32,7 @@ public class ChessBoard {
     private Position lastMovedPiecePos = null;
 
     /**
-     * constructeur utiliser pour les tests
+     * constructeur utilisé pour les tests
      *
      * @param board tableau de pieces
      */
@@ -122,7 +125,6 @@ public class ChessBoard {
      *
      * @return vrai si winner n'est pas NULL
      */
-    //TODO bonus check match null;
     public boolean isGameOver() {
         return winner != null;
     }
@@ -194,7 +196,8 @@ public class ChessBoard {
     }
 
     /**
-     * vérifie si le déplacement de la pièce est dangereux (atterit sur une case attaquée par l'ennemi
+     * vérifie si le déplacement de la pièce est dangereux (atterit sur une
+     * case attaquée par l'ennemi
      *
      * @param fromX position x de départ de la pièce
      * @param fromY position y de départ de la pièce
@@ -214,7 +217,8 @@ public class ChessBoard {
         for (int x = 0; x < boardSize; ++x) {
             for (int y = 0; y < boardSize; ++y) {
                 if (x == toX && y == toY) continue;
-                Piece piece = getPiece(x, y); //piece courante pour laquelle on vérifie que pas d'échec possible
+                //piece courante pour laquelle on vérifie que pas d'échec possible
+                Piece piece = getPiece(x, y);
                 if (piece != null && piece.canMove(this, x, y, toX, toY)) {
                     isDangerous = true;
                     break;
@@ -273,7 +277,8 @@ public class ChessBoard {
     }
 
     /**
-     * Détermine si la pièce à la position (x,y) est promotable (sur la dernière ligne du terrain adverse)
+     * Détermine si la pièce à la position (x,y) est promotable (sur la
+     * dernière ligne du terrain adverse)
      *
      * @param x coordonnée X de la pièce
      * @param y coordonnée Y de la pièce
